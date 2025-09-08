@@ -21,4 +21,3 @@ public class TwoSum {
         System.out.println("Output: " + ans[0] + ", " + ans[1]);
     }
 }
-

@@ -1,4 +1,4 @@
-public class ReverseString {
+public class ReverseCharaacterString {
 
     public static void reverseUsingStringBuilder(String s) {
         StringBuilder sb = new StringBuilder(s);
