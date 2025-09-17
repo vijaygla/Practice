@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic HTML</title>
+</head>
+
+<body>
+    <h1>Table tag</h1>
+    <caption>Student Details</caption>
+    <table border="1px">
+        <tr>
+            <th>Name</th>
+            <th>age</th>
+            <th>Gender</th>
+        </tr>
+        <tr>
+            <td>vijay</td>
+            <td>20</td>
+            <td>Male</td>
+        </tr>
+        <tr>
+            <td>Kunal</td>
+            <td>21</td>
+            <td>male</td>
+        </tr>
+        <tr>
+            <td>Shamya</td>
+            <td>22</td>
+            <td>female</td>
+        </tr>
+    </table>
+
+    <h1>rowspan and colspan attributes</h1>
+    <table border="1px">
+        <tr>
+            <th rowspan="2">Name</th>
+            <th colspan="2">Marks</th>
+        </tr>
+        <tr>
+            <th>Math</th>
+            <th>Science</th>
+        </tr>
+        <tr>
+            <td>Alice</td>
+            <td>85</td>
+            <td>90</td>
+        </tr>
+        <tr>
+            <td>Bob</td>
+            <td>78</td>
+            <td>88</td>
+        </tr>
+    </table>
+
+    <h1>Weekly Time Table</h1>
+
+    <table border="1px">
+        <tr>
+            <th colspan="6">Time Table</th>
+        </tr>
+        <tr>
+            <th>Day</th>
+            <th>10 AM to 11 AM</th>
+            <th>11 AM to 12 PM</th>
+            <th>12 PM to 1 PM</th>
+            <th>1 PM to 2 PM</th>
+            <th>2 PM to 3 PM</th>
+        </tr>
+        <tr>
+            <td>Monday</td>
+            <td>Maths</td>
+            <td>Science</td>
+            <th rowspan="5">Lunch Break</th>
+            <td>English</td>
+            <td>History</td>
+        </tr>
+        <tr>
+            <td>Tuesday</td>
+            <td>Physics</td>
+            <td>Chemistry</td>
+            <td>Biology</td>
+            <td>Geography</td>
+        </tr>
+        <tr>
+            <td>Wednesday</td>
+            <td>English</td>
+            <td>Maths</td>
+            <td>Computer</td>
+            <td>Sports</td>
+        </tr>
+        <tr>
+            <td>Thursday</td>
+            <td>History</td>
+            <td>Geography</td>
+            <td>Science</td>
+            <td>Art</td>
+        </tr>
+        <tr>
+            <td>Friday</td>
+            <td>Biology</td>
+            <td>Physics</td>
+            <td>Maths</td>
+            <td>Music</td>
+        </tr>
+    </table>
+
+    <h1>HTML5 Features: Detail tag and summary tag ans progress</h1>
+    <H2>Summary and details tag</H2>
+    <details>
+        <summary>Click to show/hide details This is using summay</summary>
+        <p>This is the hidden content that will be shown when the details element is toggled open. This is using detail
+        </p>
+    </details>
+
+    <h2>📊 Progress Bar Example</h2>
+    <label for="progress">Loading Progress:</label><br>
+    <progress id="progress" value="70" max="100"></progress>
+
+    <h2>canvas tag: use for Drawing area (for JS graphics)</h2>
+    <canvas id="myCanvas" width="400" height="200" style="border:1px solid black;"></canvas>
+    <script>
+        let canvas = document.getElementById("myCanvas");
+        let ctx = canvas.getContext("2d");
+        ctx.fillStyle = "red";          // set color to red
+        ctx.fillRect(20, 20, 100, 50);  // x=20, y=20, width=100, height=50
+        // STEP 4: Draw a blue circle
+        ctx.beginPath();                // start a new shape
+        ctx.arc(200, 60, 40, 0, 2 * Math.PI); // centerX=200, centerY=60, radius=40
+        ctx.fillStyle = "blue";
+        ctx.fill();
+        // STEP 5: Draw text
+        ctx.font = "20px Arial";
+        ctx.fillStyle = "green";
+        ctx.fillText("Hello Canvas!", 120, 150); // text at x=120, y=150
+    </script>
+
+    <h1>List tag</h1>
+    <h2>unordered list</h2>
+    <ul>
+        <li>apple</li>
+        <li>banana</li>
+        <li>grapes</li>
+    </ul>
+
+    <h2>ordered list</h2>
+    <ol>
+        <li>apple</li>
+        <li>banana</li>
+        <li>grapes</li>
+    </ol>
+
+
+    <h1>Form tag</h1>
+    <form action="/submit-form">
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" placeholder="Enter your email">
+        <br>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="Enter your password">
+        <br>
+        <button onclick="submitForm()">submit</button>
+    </form>
+    <h2>Feedback</h2>
+    <textarea name="feedback" id="feedback" placeholder="Enter your feedback"></textarea>
+
+    <h1>dropdown menu</h1>
+    <label for="country">Select your country</label>
+    <select name="country" id="country">
+        <option value="in">India</option>
+        <option value="uk">Russia</option>
+        <option value="us">USA</option>
+    </select>
+
+
+    <h1>Radio button</h1>
+    <h2>Select Your Gender</h2>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label><br>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label><br>
+    <input type="radio" id="other" name="gender" value="other">
+    <label for="other">Other</label><br>
+
+
+    <h1>Check box</h1>
+    <h2>Select Your Skills</h2>
+    <input type="checkbox" id="html" name="skill" value="HTML">
+    <label for="html">HTML</label><br>
+    <input type="checkbox" id="css" name="skill" value="CSS">
+    <label for="css">CSS</label><br>
+    <input type="checkbox" id="js" name="sill" value="JavaScript">
+    <label for="js">JavaScript</label><br>
+    <input type="checkbox" id="python" name="skill" value="Python">
+    <label for="python">Python</label><br>
+
+
+    <h1>Media Tag</h1>
+    <img src="media//dp.jpg" height="200 px" width="300px" alt="dp">
+    <br>
+    <br>
+    <audio controls src="media/audio.mp3" height="200 px" width="300px">sample audio</audio>
+    <br>
+    <br>
+    <video controls src="media/sample video.mp4" height="200 px" width="300px">sample video</video>
+
+    <h1>Hyper link</h1>
+    <a href="https://www.google.com" target="_blank">Go to Google in new tab</a>
+    <br>
+    <br>
+    <a href="https://www.google.com" target="_self">Go to Google in same tab using self which is default</a>
+    <br>
+    <br>
+    <a href="https://www.example.com">Go to Example using the parent which help in nested hyperlink</a>
+    <br>
+    <br>
+
+    <h1>IFrame tag</h1>
+    <iframe src="https://www.example.com" frameborder="1px"></iframe>
+    <br>
+    <iframe src="media/sample video.mp4" auto-play="true" frameborder="1px"></iframe>
+    <br>
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675832.804566604!2d83.16556167455198!3d25.87999186464446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed5844f0bb6903%3A0x57ad3fed1bbae325!2sBihar!5e0!3m2!1sen!2sin!4v1757789046581!5m2!1sen!2sin"
+        width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <br>
+    <br>
+
+    <h1>Validation</h1>
+    <h2>Login form</h2>
+    <form>
+        <!-- Email with pattern -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            title="Enter a valid email address" required><br><br>
+
+        <!-- Password with constraints -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" minlength="8" maxlength="16" required><br><br>
+        <input type="submit" value="Login">
+        <button>Login me</button>
+    </form>
+    <br>
+    <h1>Navigation Tag</h1>
+    <nav>
+        <a href="#top">Go to top</a><br>
+        <a href="#home">Go to home</a>
+    </nav>
+
+    <h1>Responsive Design</h1>
+    <img src="media/dp.jpg" alt="Responsive Image" style="max-width: 100%; height: auto;">
+
+
+
+</body>
+
+</html>
