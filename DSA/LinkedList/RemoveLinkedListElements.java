@@ -20,8 +20,9 @@ public class RemoveLinkedListElements {
     }
 
     public static ListNode removeElements(ListNode head, int val) {
-        if (head == null)
+        if (head == null){
             return null;
+        }
         ListNode dummy = new ListNode(0);
         dummy.next = head;
 

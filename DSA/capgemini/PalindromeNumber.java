@@ -2,19 +2,19 @@
 
 public class PalindromeNumber {
 
-    public static boolean isPalindrome(int num) {
+    public static boolean checkPalindrome1(int num) {
         int original = num;
-        int rev = 0;
+        int reverse = 0;
         while (num > 0) {
             int rem = num % 10;
-            rev = rev * 10 + rem;
+            reverse = reverse * 10 + rem;
             num = num / 10;
         }
-        return rev == original;
+        return reverse == original;
     }
 
     // method 2
-    public static boolean checkPalindrome(int num) {
+    public static boolean checkPalindrome2(int num) {
         String s = Integer.toString(num);
         int n = s.length();
 
@@ -26,14 +26,26 @@ public class PalindromeNumber {
         return true;
     }
 
+    // approch 3
+    public static boolean checkPalindrome3(int num) {
+        String s = String.valueOf(num);
+
+        int start = 0, end = s.length()-1;
+        while (start < end) {
+            if(s.charAt(start++) != s.charAt(end--)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
         int num = 121;
-        if (isPalindrome(num)) {
-            System.out.println(num + " is a palindrome.");
-        } else {
-            System.out.println(num + " is not a palindrome.");
-        }
+        
+        System.out.println("Output: " + checkPalindrome1(num));
 
-        System.out.println("Output: " + checkPalindrome(num));
+        System.out.println("Output: " + checkPalindrome2(num));
+        
+        System.out.println("Output: " + checkPalindrome3(num));
     }
 }
