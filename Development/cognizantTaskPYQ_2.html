@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login form pass validation</title>
+    <!-- css -->
+    <style>
+        .parent {
+            background-color: rgb(222, 117, 117);
+            width: 400px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        input,
+        label,
+        button {
+            margin: 10px;
+            padding: 8px;
+        }
+
+        input {
+            border-radius: 5px;
+            border: 1px solid #555;
+        }
+
+        button {
+            background-color: aqua;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .child {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Login pass validation form</h1>
+
+    <div class="parent">
+        <form onsubmit="return validationForm()">
+            <label for="name">Enter your name</label>
+            <input type="text" id="name">
+
+            <label for="email">Enter your email</label>
+            <input type="text" id="email">
+
+            <label for="pass">Enter your password</label>
+            <input type="password" id="pass">
+
+            <label for="re-pass">Re-enter your password</label>
+            <input type="password" id="re-pass">
+
+            <button>submit</button>
+        </form>
+    </div>
+
+    <div class="child">
+        <p id="name-alert"></p>
+        <p id="pass-alert"></p>
+        <p id="email-alert"></p>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        const validationForm = () => {
+            const name = document.querySelector("#name").value.trim();
+            const email = document.querySelector("#email").value;
+            const pass = document.querySelector("#pass").value;
+            const rePass = document.querySelector("#re-pass").value;
+
+            if (name === "") {
+                document.querySelector("#name-alert").innerHTML = "Name is required!";
+                return false; // stop form submit
+            }
+            const atIndex = email.indexOf("@");
+            const dotIndex = email.lastIndexOf(".");
+            if (email === "") {
+                document.querySelector("#email-alert").innerHTML = "Email is required!";
+                return false; // stop form submit
+            }
+            else if (atIndex < 1 || dotIndex < atIndex + 2 || dotIndex === email.length - 1) {
+                document.querySelector("#email-alert").innerHTML = "Invalid email format!";
+                return false; // stop form submit
+            }
+
+            if (pass === "") {
+                document.querySelector("#pass-alert").innerHTML = "Password is required!";
+                return false; // stop form submit
+            }
+            if (rePass === "") {
+                document.querySelector("#pass-alert").innerHTML = "Re-enter password is required!";
+                return false; // stop form submit
+            }
+            if (pass !== rePass) {
+                document.querySelector("#pass-alert").innerHTML = "Passwords do not match!";
+                return false; // stop form submit
+            }
+
+            alert("Form submitted successfully ✅");
+            return true;
+        }
+    </script>
+
+</body>
+
+</html>

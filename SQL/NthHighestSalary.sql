@@ -7,10 +7,15 @@ select distinct salary from Employee
 order by salary desc
 limit 1 offset 1;
 
-
+-- To get 1 row starting from offset 2 (i.e., 3rd highest salary)
+SELECT DISTINCT salary 
+FROM Employee
+ORDER BY salary DESC
+LIMIT 2, 1;
 
 -- Write a SQL query to get the nth highest salary from the Employee table.
-select salary from Employee
+set n = n-1; -- for my sql
+select distinct salary from Employee
 order by salary desc
 limit 1 offset n;
 

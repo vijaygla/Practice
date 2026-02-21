@@ -54,3 +54,4 @@ public class CountFairSplits {
         System.out.println("Output: " + countFairSplits(nums));
     }
 }
+

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Calcalculator</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            margin-top: 5px;
+        }
+
+        .parent {
+            height: 300px;
+            width: 400px;
+            background: #e28a8a;
+        }
+
+        .row {
+            display: flex;
+            margin-left: 10px;
+            margin-top: 20px;
+        }
+
+        label {
+            border: 2px solid white;
+            height: 20px;
+            width: 150px;
+            padding: 10px;
+            margin-right: 30px;
+        }
+
+        .submitClass {
+            border: 2px solid white;
+            margin-left: 10px;
+            width: 370px;
+            height: 35px;
+        }
+
+        #submit {
+            margin: 10px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <h1>Bill Calcalculator</h1>
+    <div class="parent">
+        <div class="row">
+            <label for="productName" id="productName">Enter product name</label>
+            <input type="text" name="productName" id="productName" placeholder="Product Name">
+        </div>
+
+        <div class="row">
+            <label for="price">Product price in rs</label>
+            <input type="number" name="price" id="price" placeholder="Product price">
+        </div>
+
+        <div class="row">
+            <label for="quantity">Quantity</label>
+            <input type="number" name="quantity" id="quantity" placeholder="Enter Quantity">
+        </div>
+
+        <div class="row">
+            <label for="totalPrice">Total price in rs</label>
+            <input type="text" name="totalPrice" id="totalPrice" readonly>
+        </div>
+
+        <div class="submitClass">
+            <button id="submit">Submit</button>
+        </div>
+
+    </div>
+
+    <!-- <script>
+        document.getElementById("submit").addEventListener("click", function () {
+            const price = document.getElementById("price").value || 0;
+            const quantity = document.getElementById("quantity").value || 0;
+            const total = price * quantity;
+
+            document.getElementById("totalPrice").value = total;
+        })
+    </script> -->
+        <!-- ------------OR------------ -->
+    <script>
+        document.querySelector("#submit").addEventListener("click", () => {
+            const price = Number(document.querySelector("#price").value) || 0;
+            const quantity = Number(document.querySelector("#quantity").value) || 0;
+
+            const totalPrice = price * quantity;
+
+            document.querySelector("#totalPrice").value = totalPrice;
+        });
+    </script>
+
+</body>
+
+</html>

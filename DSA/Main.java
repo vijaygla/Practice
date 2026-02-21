@@ -92,12 +92,18 @@ public class Main {
     // System.out.println(countCotton(nums));
     // }
 
-    public static void main(String[] args) {
-        HashMap<Integer, String> map = new HashMap<>();
-        map.put(1, "A");
-        map.put(2, "B");
-        map.put(1, "C");
+    // public static void main(String[] args) {
+    //     HashMap<Integer, String> map = new HashMap<>();
+    //     map.put(1, "A");
+    //     map.put(2, "B");
+    //     map.put(1, "C");
 
-        System.out.println(map.get(1));
+    //     System.out.println(map.get(1));
+    // }
+
+
+    public static void main(String[] args) {
+        
     }
+
 }
